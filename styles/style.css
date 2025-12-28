@@ -79,13 +79,11 @@ main {
     gap: 20px;
 }
 
-main section {
-    grid-column: 2 / 3;
-    background-color: var(--color-3);
-}
-
 #content_perfil {
+    background-color: var(--color-3);
     padding: 20px;
+    grid-column: 2 / 3;
+    border-radius: 4px;
 }
 
 #content_perfil img {
@@ -130,14 +128,156 @@ main section {
 
 #social_perfil svg {
     height: 32px;
+    transition: transform 0.5s ease;
 }
 
 #social_perfil a {
     color: var(--color-1);
     margin: 0px 10px;
-    transition: color 0.5s ease;
+    transition: color 0.5s ease, transform 0.5s ease;
 }
 
 #social_perfil a:hover {
     color: var(--color-2);
+}
+
+#social_perfil a:hover > svg {
+    transform: rotate(360deg);
+}
+
+/* detalhe */
+
+#detalhe {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+#detalhe > article {
+    background-color: var(--color-3);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#detalhe article > h2 {
+    color: var(--color-1);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#detalhe h2 > .material-symbols-outlined{
+    font-size: 30px;
+    transition: transform 0.5s ease;
+}
+
+#detalhe > article:hover > h2 > .material-symbols-outlined{
+    transform: rotate(360deg);
+}
+
+/* Formações */
+
+#formacaos .container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+}
+
+#formacaos .item {
+    background-color: var(--color-4);
+    padding:4px 0px 4px 8px;
+    border-left: 4px solid var(--color-1);
+    border-radius: 8px;
+    transition: border-left 0.5s ease;
+}
+
+#formacaos .item:hover {
+    border-left: 12px solid var(--color-2);
+}
+
+#formacaos .item > .periodo {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--color-5);
+}
+
+#formacaos .item > .instituicao {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--color-5);
+}
+
+#formacaos .item > .curso {
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--color-5);
+}
+
+#formacaos h3 {
+    margin: 2px 0px;
+}
+/* Skills */
+
+#skills .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 16px;
+}
+
+#skills .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+#skills .info > span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#skills span > .nome {
+    font-size: 16px;
+    font-weight:bold;
+    color: var(--color-5);
+}
+
+#skills span > .material-symbols-outlined {
+    font-size: 20px;
+    font-weight:bold;
+    color: var(--color-5);
+}
+
+#skills .porcent {
+    font-size: 16px;
+    font-weight:bold;
+    color: var(--color-1);
+}
+
+#skills .barra {
+    height: 8px;
+    width: 100%;
+    background-color: var(--color-4);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#skills .progress {
+    height: 100%;
+    background-color: var(--color-1);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+}
+
+/* MUDAR ISSO PARA UM CSS DE DESKTOP */
+
+@media screen and (min-width: 780px) {
+    #skills .container {
+    grid-template-columns: 1fr 1fr;
+}
 }
