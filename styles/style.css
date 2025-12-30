@@ -274,10 +274,99 @@ main {
 
 }
 
+/* Projetos */
+
+#projetos .container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 16px;
+}
+
+#projetos .projeto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--color-4);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#projetos .img-projeto {
+    width: 100%;
+    object-fit: cover;
+    object-position: top left;
+    max-height: 160px;
+    transition: filter 0.5s ease;
+}
+
+ #projetos .projeto:hover .img-projeto {
+    filter: brightness(50%);
+}
+
+#projetos .info {
+    width: 100%;
+    padding: 8px;
+    color: var(--color-5);
+}
+
+#projetos .periodo {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-5);
+}
+
+#projetos h3 {
+    font-size: 24px;
+    font-style: italic;
+    margin: 4px 0px;
+    color: var(--color-1);
+    transition: color 0.5s ease;
+}
+
+#projetos .projeto:hover h3 {
+    color: var(--color-2);
+}
+
+#projetos .content {
+    margin-bottom: 4px;
+}
+
+#projetos a {
+    text-decoration: none;
+    color: var(--color-5);
+}
+
+#projetos .color-link {
+    text-decoration: none;
+    font-style: italic;
+    color: var(--color-1);
+}
+
+
+
 /* MUDAR ISSO PARA UM CSS DE DESKTOP */
 
 @media screen and (min-width: 780px) {
     #skills .container {
-    grid-template-columns: 1fr 1fr;
-}
+        grid-template-columns: 1fr 1fr;
+    }
+    #projetos .projeto {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        border-left: 4px solid var(--color-1);
+        transition: border-left 0.5s ease;
+    }
+
+    #projetos .projeto:hover {
+        border-left: 12px solid var(--color-2);
+    }
+
+    #projetos .img-projeto {
+        width: 100px;
+        max-height: 140px;
+    }
 }
