@@ -6,7 +6,8 @@
     --color-2: #00a566;
     --color-3: #ffffff;
     --color-4: #eeeeee;
-    --color-5: #0a0a0a;
+    --color-5: #111111;
+    --color-6: #000000;
 }
 
 * {
@@ -14,6 +15,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: "Archivo", sans-serif;
+    color: var(--color-5);
 }
 
 html, body {
@@ -126,19 +128,14 @@ main {
     justify-content: center;
 }
 
-#social_perfil svg {
+#social_perfil a > svg {
     height: 32px;
     transition: transform 0.5s ease;
 }
 
 #social_perfil a {
-    color: var(--color-1);
     margin: 0px 10px;
     transition: color 0.5s ease, transform 0.5s ease;
-}
-
-#social_perfil a:hover {
-    color: var(--color-2);
 }
 
 #social_perfil a:hover > svg {
@@ -171,6 +168,7 @@ main {
 
 #detalhe h2 > .material-symbols-outlined{
     font-size: 30px;
+    color: var(--color-1);
     transition: transform 0.5s ease;
 }
 
@@ -291,6 +289,7 @@ main {
     background-color: var(--color-4);
     border-radius: 8px;
     overflow: hidden;
+    width: 100%;
 }
 
 #projetos .img-projeto {
@@ -342,16 +341,58 @@ main {
     text-decoration: none;
     font-style: italic;
     color: var(--color-1);
+    transition: color 0.5s ease;
 }
 
+#projetos .color-link:hover {
+    color: var(--color-2);
+}
 
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-1);
+}
+
+#footer {
+    padding: 13px 0px;
+}
+
+#footer p {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--color-5);
+}
+
+#footer p > a{
+    text-decoration: none;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--color-3);
+    transition: color 0.5s ease;
+}
+
+#footer p > a:hover{
+    color: var(--color-4);
+}
 
 /* MUDAR ISSO PARA UM CSS DE DESKTOP */
 
 @media screen and (min-width: 780px) {
-    #skills .container {
-        grid-template-columns: 1fr 1fr;
+    main {
+        display: grid;
+        grid-template-columns: auto 320px 1fr auto;
+        gap: 20px;
     }
+    #detalhe {
+        grid-column: 3 / 4;
+    }
+}
+
+@media screen and (min-width: 850px) {
     #projetos .projeto {
         width: 100%;
         flex-direction: row;
@@ -368,5 +409,11 @@ main {
     #projetos .img-projeto {
         width: 100px;
         max-height: 140px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    #skills .container {
+        grid-template-columns: 1fr 1fr;
     }
 }
