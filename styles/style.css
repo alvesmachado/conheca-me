@@ -43,6 +43,9 @@ header {
     justify-content: flex-end;
     align-items: center;
     overflow-y: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 header ul {
@@ -55,20 +58,21 @@ header a {
     text-decoration: none;
     color: var(--color-3);
     padding: 11px 10px;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    border-radius: 50%;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
 }
 
 header a:hover {
-    background-color: var(--color-2);
     color: var(--color-4);
+    transform: rotate(360deg);
+}
+
+header a:active {
+    background-color: var(--color-2);
 }
 
 header .material-symbols-outlined{
     font-size: 24px;
-}
-
-.tema::after {
-    content: "sunny";
 }
 
 /* main */
@@ -355,6 +359,7 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--color-1);
+    margin-top: 20px;
 }
 
 #footer {
@@ -382,17 +387,33 @@ footer {
 /* MUDAR ISSO PARA UM CSS DE DESKTOP */
 
 @media screen and (min-width: 780px) {
+    /* Dividir Main*/
     main {
         display: grid;
-        grid-template-columns: auto 320px 1fr auto;
+        grid-template-columns: auto 300px 1fr auto;
         gap: 20px;
     }
+
+    #content_perfil {
+        grid-column: 2 / 3;
+        height: fit-content;
+        position: sticky;
+        top: 65px;
+    }
+
     #detalhe {
         grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    #initial-home {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
     }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 950px) {
+    /* Dividir projetos*/
     #projetos .projeto {
         width: 100%;
         flex-direction: row;
@@ -413,6 +434,7 @@ footer {
 }
 
 @media screen and (min-width: 950px) {
+    /* Dividir Skills */
     #skills .container {
         grid-template-columns: 1fr 1fr;
     }
