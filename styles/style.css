@@ -10,6 +10,20 @@
     --color-6: #000000;
 }
 
+body.escuro {
+    --color-1: #00a566;
+    --color-2: rgb(0, 224, 138);
+    --color-3: #111111;
+    --color-4: #000000;
+    --color-5: #ffffff;
+    --color-6: #eeeeee;
+}
+
+
+body {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -48,6 +62,10 @@ header {
     z-index: 1;
 }
 
+body.escuro > header{
+    background-color: var(--color-2);
+}
+
 header ul {
     list-style-type: none;
     display: flex;
@@ -69,6 +87,18 @@ header a:hover {
 
 header a:active {
     background-color: var(--color-2);
+}
+
+body.escuro > header a{
+    color: var(--color-5);
+}
+
+body.escuro > header a:hover{
+    color: var(--color-6);
+}
+
+body.escuro > header a:active{
+    background-color: var(--color-1);
 }
 
 header .material-symbols-outlined{
